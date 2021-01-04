@@ -4,7 +4,7 @@ Make short link by using [Golinksrt](https://golinksrt.xyz/) API key
 
 #### The Easy Way
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Mrvishal2k2/GPlink-bot/tree/GolinksrtBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Mrvishal2k2/GPlink-bot/tree/TestAuth)
 
 ##### Required Variables
 

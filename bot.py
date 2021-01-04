@@ -20,23 +20,16 @@ bot = Client('golinksrt bot',
              sleep_threshold=10)
 
 
-@bot.on_message(filters.command('start') & filters.private)
+@bot.on_message(filters.command('start') & filters.AUTH_USERS)
 async def start(bot, message):
     
-    if str(message.User.id) not in AUTH_USERS:
-        await message.delete(revoke=True)
-        return
-        
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
         "I'm Golinksrt bot. Just send me link and get short link")
 
 
-@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
+@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.AUTH_USERS)
 async def link_handler(bot, message):
-    if str(message.User.id) not in AUTH_USERS:
-        await message.delete(revoke=True)
-        return
 
     link = message.matches[0].group(0)
     try:

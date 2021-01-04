@@ -13,3 +13,4 @@ Make short link by using [Golinksrt](https://golinksrt.xyz/) API key
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_KEY`: Create [Golinksrt](https://golinksrt.xyz/) account then get this value from [Golinksrt](https://golinksrt.xyz/member/tools/api)
+* `AUTH_USERS`: Only these users can Use other users get revoked from using 🙃 Separate userid with space 

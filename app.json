@@ -1,12 +1,12 @@
 {
-    "name": "GPlink_Bot",
-    "description": "Make short link by using GPlink API key",
+    "name": "Golinksrt_Bot",
+    "description": "Make short link by using Golinksrt API key",
     "keywords": [
         "telegram",
-        "gplink"
+        "golinksrt"
     ],
-    "website": "https://github.com/Mahesh0253/GPlink-bot",
-    "repository": "https://github.com/Mahesh0253/GPlink-bot",
+    "website": "https://github.com/Mrvishal2k2/GPlink-bot/tree/GolinksrtBot",
+    "repository": "https://github.com/Mrvishal2k2/GPlink-bot/tree/GolinksrtBot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token",
@@ -21,7 +21,7 @@
             "value": ""
         },
         "API_KEY": {
-            "description": "Get API key from https://gplinks.in/member/tools/api",
+            "description": "Get API key from https://golinksrt.xyz/member/tools/api",
             "required": false
         }
     },

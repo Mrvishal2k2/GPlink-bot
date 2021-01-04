@@ -25,6 +25,7 @@ async def start(bot, message):
     
     if str(message.from_user.id) not in AUTH_USERS:
         await message.delete(revoke=True)
+        return
         
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
@@ -33,6 +34,10 @@ async def start(bot, message):
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
+    if str(message.from_user.id) not in AUTH_USERS:
+        await message.delete(revoke=True)
+        return
+
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)

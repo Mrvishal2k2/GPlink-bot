@@ -23,7 +23,7 @@ bot = Client('golinksrt bot',
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     
-    if str(message.from_user.id) not in AUTH_USERS_USERS:
+    if str(message.from_user.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         
     await message.reply(

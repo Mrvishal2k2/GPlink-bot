@@ -26,8 +26,8 @@ async def start(bot, message):
     if str(message.from_user.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
-        
-    await message.reply(
+    else:    
+        await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
         "I'm Golinksrt bot. Just send me link and get short link")
 
@@ -37,7 +37,7 @@ async def link_handler(bot, message):
     if str(message.from_user.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
-
+    
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)

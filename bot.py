@@ -23,7 +23,7 @@ bot = Client('golinksrt bot',
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     
-    if str(message.User.id) not in AUTH_USERS:
+    if str(User.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
         
@@ -34,7 +34,7 @@ async def start(bot, message):
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
-    if str(message.User.id) not in AUTH_USERS:
+    if str(User.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
 

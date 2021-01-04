@@ -9,6 +9,8 @@ API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
 API_KEY = environ.get('API_KEY')
+AUTH_USERS = set(int(x) for x in environ.get("AUTH_USERS", "").split())
+
 
 bot = Client('golinksrt bot',
              api_id=API_ID,
@@ -20,6 +22,10 @@ bot = Client('golinksrt bot',
 
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
+    
+    if str(message.from_user.id) not in AUTH_USERS_USERS:
+        await message.delete(revoke=True)
+        
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
         "I'm Golinksrt bot. Just send me link and get short link")

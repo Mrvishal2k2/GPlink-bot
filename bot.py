@@ -3,7 +3,7 @@
 from os import environ
 import aiohttp
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, User
 
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
@@ -23,7 +23,7 @@ bot = Client('golinksrt bot',
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     
-    if str(message.from_user.id) not in AUTH_USERS:
+    if str(message.User.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
         
@@ -34,7 +34,7 @@ async def start(bot, message):
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
-    if str(message.from_user.id) not in AUTH_USERS:
+    if str(message.User.id) not in AUTH_USERS:
         await message.delete(revoke=True)
         return
 

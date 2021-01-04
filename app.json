@@ -12,6 +12,10 @@
             "description": "Your bot token",
             "value": ""
         },
+        "AUTH_USERS": {
+            "description": "Only these users can use bot 😇separate ids with space 🙃",
+            "value": ""
+        },
         "API_ID": {
             "description": "Get this value from https://my.telegram.org",
             "value": ""

@@ -31,11 +31,12 @@ bot = Client('shorter',
 	       sleep_threshold=10)
 
 def get_shortlink(link):
+    print(link)
     url = "https://api.short.cm/links"
     res = requests.post(url, { 
 	'domain': YOUR_DOMAIN,
 	'originalURL': link, },
-	headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0'
+	headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0',
         'authorization': API_KEY }, 
 	json=True)
     res.raise_for_status()

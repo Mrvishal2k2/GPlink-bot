@@ -27,7 +27,7 @@ bot = Client('shorter',
 	       workers=50,
 	       sleep_threshold=10)
 
-async def get_shortlink(link):
+def get_shortlink(link):
     
     res = requests.post(
   'https://api.short.cm/links', { 
@@ -62,7 +62,7 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     
     try:
-        short_link = await get_shortlink(link)
+        short_link = get_shortlink(link)
         button = [[InlineKeyboardButton("Link 🔗", url=short_link)]]
         markup = InlineKeyboardMarkup(button)
         await message.reply_text(f'The shortlink for link \n{link} \n is below 🥳  \n`{short_link}` ',reply_markup=markup, quote=True)

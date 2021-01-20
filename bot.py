@@ -29,11 +29,11 @@ bot = Client('shorter',
 
 def get_shortlink(link):
     
-    res = requests.post(
-  'https://api.short.cm/links', { 
+    res = requests.post('https://api.short.cm/links', { 
 	'domain': YOUR_DOMAIN,
 	'originalURL': link, },
-	headers = {'authorization': API_KEY }, 
+	headers = {
+        'authorization': API_KEY }, 
 	json=True)
     res.raise_for_status()
     data = res.json()

@@ -1,12 +1,3 @@
-/*  Copyright (C) 2020 by Anandpskerala@Github, < https://github.com/Anandpskerala >.
- *
- * This file is part of < https://github.com/Anandpskerala/ForwardTagRemoverBot > project,
- * and is released under the "GNU v3.0 License Agreement".
- * Please see < https://github.com/Anandpskerala/ForwardTagRemoverBot/blob/master/LICENSE >
- *
- * All rights reserved.
- */
-
 package commands
 
 import (
